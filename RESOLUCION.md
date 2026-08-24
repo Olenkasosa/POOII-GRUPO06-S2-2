@@ -201,3 +201,86 @@ public class Main {
         sistema.procesarEmpleado(practicante);
     }
 }
+
+3. Identificación de las violaciones SOLID
+3.1. Principio SRP – Single Responsibility Principle
+El principio de Responsabilidad Única establece que una clase debe tener una sola responsabilidad.
+
+En el código original, la clase Empleado tiene diferentes responsabilidades:
+
+Almacenar información del empleado.
+Calcular el pago.
+Guardar el empleado en la base de datos.
+Generar reportes.
+Por ejemplo:
+public double calcularPago() {
+    ...
+}
+
+public void guardarEnBaseDeDatos() {
+    ...
+}
+
+public void generarReporte() {
+    ...
+}
+Esto significa que la clase Empleado tiene diferentes razones para cambiar.
+
+Problema
+Si cambia la forma de calcular los salarios, se debe modificar Empleado.
+
+Si cambia la forma de guardar los datos, se debe modificar Empleado.
+
+Si cambia el formato de los reportes, se debe modificar Empleado.
+
+Esto genera una clase difícil de mantener.
+
+Solución
+Separar cada responsabilidad en una clase o interfaz independiente:
+
+Empleado
+│
+├── Información del empleado
+│
+CalculadorPago
+│
+├── Cálculo del pago
+│
+EmpleadoRepository
+│
+├── Persistencia
+│
+GeneradorReporte
+│
+└── Generación de reportes
+4. Violación del principio OCP
+El principio Open/Closed establece que una clase debe estar abierta para extensión, pero cerrada para modificación.
+
+En el código original encontramos:
+if(tipo.equals("Gerente")) {
+    return salario + 1000;
+} else if (tipo.equals("Desarrollador")) {
+    return salario;
+} else if (tipo.equals("Practicante")) {
+    return salario * 0.5;
+}
+Problema
+Si la empresa incorpora un nuevo tipo de empleado, por ejemplo:
+sería necesario modificar nuevamente el método calcularPago():
+else if (tipo.equals("Supervisor")) {
+    return salario + 500;
+}
+ Cada nuevo tipo de empleado obliga a modificar una clase existente.
+
+Solución
+Crear una interfaz:
+ public interface CalculadorPago {
+
+    double calcularPago(double salario);
+}
+Suyure Poo2: Luego cada tipo de pago tendrá su propia implementación:
+Poo2: CalculadorPago
+│
+├── PagoGerente
+├── PagoDesarrollador
+└── PagoPracticante
