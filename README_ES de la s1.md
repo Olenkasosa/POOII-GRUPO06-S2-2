@@ -1,10 +1,10 @@
 # Actividad 1: Identificación y Corrección de Infracciones a los Principios SOLID
 
 ### Integrantes
-CAJA CORRALES, DAIN JAIR(DainBox)
-RETES GUTIERREZ, PIERO FERNANDO (Pieroretes27)
-SOSA TACO, CELINA OLENKA (Olenkasosa)
-YURIVILCA LAUREANO, STEFFI IRENE (IreYuri)
+- *CAJA CORRALES, DAIN JAIR(DainBox)*
+- *RETES GUTIERREZ, PIERO FERNANDO (Pieroretes27)*
+- *SOSA TACO, CELINA OLENKA (Olenkasosa)*
+- *YURIVILCA LAUREANO, STEFFI IRENE (IreYuri)*
 
 
 ## Objetivo: El objetivo de esta actividad es que los estudiantes analicen un código fuente que infringe los principios SOLID, identifiquen las violaciones y propongan soluciones para corregirlas aplicando los principios de SOLID.
