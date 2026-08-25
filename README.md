@@ -18,8 +18,6 @@ a. *Deberá implementarse una clase Producto con los siguientes atributos:*
 
 • *Int cantidad*
 
-<img width="400" height="284" alt="image" src="https://github.com/user-attachments/assets/25f2e336-e33a-42f2-98da-dd6582fa26a7" />
-
 
 b. *Al registrar un nuevo producto se agregará a una lista de objetos de la _claseProducto_. Además, la totalidad de objetos creados con los datos ingresados en el formulario, serán almacenados en un archivo de texto llamado “stock.txt”.*
 
